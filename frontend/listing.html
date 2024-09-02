@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Listings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-header"><i class="fas fa-home"></i> Available Properties</h2>
+    <!-- Search bar -->
+    <input type="text" id="search" placeholder="Search by location" onkeyup="filterProperties()">
+    <!-- Price range filter -->
+    <select id="priceFilter" onchange="filterProperties()">
+      <option value="">Filter by Price</option>
+      <option value="100000">Under $100,000</option>
+      <option value="300000">Under $300,000</option>
+      <option value="500000">Under $500,000</option>
+      <option value="1000000">Under $1,000,000</option>
+    </select>
+
+    <!-- Pagination controls -->
+    <div id="pagination" class="pagination-controls"></div>
+
+    <!-- Loading spinner -->
+    <div id="loading" class="spinner" style="display: none;"></div>
+    
+    <div id="properties" class="property-list"></div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
